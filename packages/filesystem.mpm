@@ -1,0 +1,6 @@
+CLONE https://github.com/gulrak/filesystem
+RUN "cmake -S .mpm/.build/packages/filesystem -B .mpm/.build/build/filesystem -DGHC_FILESYSTEM_BUILD_EXAMPLES=OFF -DGHC_FILESYSTEM_BUILD_TESTING=OFF -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DCMAKE_INSTALL_PREFIX=.mpm/.build/installed/filesystem"
+RUN "cmake --build .mpm/.build/build/filesystem"
+RUN "cmake --install .mpm/.build/build/filesystem"
+COPY .mpm/.build/installed/filesystem/include/ .mpm/include
+COPY .mpm/.build/installed/filesystem/lib .mpm/lib/
