@@ -1,6 +1,6 @@
 CLONE https://github.com/fmtlib/fmt
-RUN "cmake -S .mpm_build/packages/fmt -B .mpm_build/build/fmt -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DFMT_TEST=OFF -DCMAKE_INSTALL_PREFIX=.mpm_build/installed/fmt"
-RUN "cmake --build .mpm_build/build/fmt"
-RUN "cmake --install .mpm_build/build/fmt"
-COPY .mpm_build/installed/fmt/lib/libfmt.a .mpm/lib/libfmt.a
-COPY .mpm_build/installed/fmt/include/ .mpm/include
+RUN "cmake -S .mpm/.build/packages/fmt -B .mpm/.build/build/fmt -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DFMT_TEST=OFF -DCMAKE_INSTALL_PREFIX=.mpm/.build/installed/fmt"
+RUN "cmake --build .mpm/.build/build/fmt"
+RUN "cmake --install .mpm/.build/build/fmt"
+COPY .mpm/.build/installed/fmt/lib/libfmt.a .mpm/lib/libfmt.a
+COPY .mpm/.build/installed/fmt/include/ .mpm/include
