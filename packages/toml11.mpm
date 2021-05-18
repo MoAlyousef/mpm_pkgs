@@ -1,0 +1,5 @@
+CLONE https://github.com/ToruNiina/toml11
+RUN "cmake -S .mpm/.build/packages/toml11 -B .mpm/.build/build/toml11 -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DCMAKE_INSTALL_PREFIX=.mpm/.build/installed/toml11"
+RUN "cmake --build .mpm/.build/build/toml11"
+RUN "cmake --install .mpm/.build/build/toml11"
+COPY .mpm/.build/installed/toml11/include/ .mpm/include
