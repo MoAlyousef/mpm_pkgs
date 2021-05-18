@@ -1,0 +1,5 @@
+CLONE https://github.com/mpark/variant
+RUN "cmake -S .mpm/.build/packages/variant -B .mpm/.build/build/variant -DMPARK_VARIANT_INCLUDE_MPARK_TESTS=OFF -DMPARK_VARIANT_INCLUDE_LIBCXX_TESTS=OFF -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DCMAKE_INSTALL_PREFIX=.mpm/.build/installed/variant"
+RUN "cmake --build .mpm/.build/build/variant"
+RUN "cmake --install .mpm/.build/build/variant"
+COPY .mpm/.build/installed/variant/include/ .mpm/include
