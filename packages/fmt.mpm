@@ -4,3 +4,4 @@ RUN "cmake --build .mpm/.build/build/fmt"
 RUN "cmake --install .mpm/.build/build/fmt"
 COPY .mpm/.build/installed/fmt/lib/libfmt.a .mpm/lib/libfmt.a
 COPY .mpm/.build/installed/fmt/include/ .mpm/include
+COPY .mpm/.build/installed/fmt/lib/cmake .mpm/share/cmake
