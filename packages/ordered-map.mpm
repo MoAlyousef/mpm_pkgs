@@ -1,0 +1,6 @@
+CLONE https://github.com/Tessil/ordered-map
+RUN "cmake -S .mpm/.build/packages/ordered-map -B .mpm/.build/build/ordered-map -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DCMAKE_INSTALL_PREFIX=.mpm/.build/installed/ordered-map"
+RUN "cmake --build .mpm/.build/build/ordered-map"
+RUN "cmake --install .mpm/.build/build/ordered-map"
+COPY .mpm/.build/installed/ordered-map/include/ .mpm/include
+COPY .mpm/.build/installed/ordered-map/share/ .mpm/share/
