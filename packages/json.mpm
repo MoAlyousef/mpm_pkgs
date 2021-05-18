@@ -1,0 +1,5 @@
+CLONE https://github.com/nlohmann/json
+RUN "cmake -S .mpm/.build/packages/json -B .mpm/.build/build/json -DJSON_BuildTests=OFF -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DCMAKE_INSTALL_PREFIX=.mpm/.build/installed/json"
+RUN "cmake --build .mpm/.build/build/json"
+RUN "cmake --install .mpm/.build/build/json"
+COPY .mpm/.build/installed/json/include/ .mpm/include
