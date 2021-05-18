@@ -1,0 +1,6 @@
+CLONE https://github.com/yhirose/cpp-httplib
+RUN "cmake -S .mpm/.build/packages/cpp-httplib -B .mpm/.build/build/cpp-httplib -DCMAKE_BUILD_TYPE=RELEASE -GNinja -DCMAKE_INSTALL_PREFIX=.mpm/.build/installed/cpp-httplib"
+RUN "cmake --build .mpm/.build/build/cpp-httplib"
+RUN "cmake --install .mpm/.build/build/cpp-httplib"
+COPY .mpm/.build/installed/cpp-httplib/include/ .mpm/include
+COPY .mpm/.build/installed/cpp-httplib/lib .mpm/lib/
